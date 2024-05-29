@@ -7,24 +7,21 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="‘R’unthrough N1因为是速通，所以会写得比较简短和跳跃速通参考书为PKU李东风教授《R语言教程》, 非常感谢李东风教授的整理 使用R语言进行编程首先是要在电脑上下载R语言， 建议下载后添加到环境变量里R语言自带有IDE， 但Rstudio（或者vsc）是更好的替代品以Rstudio为例， 其界面分为4个部分， （默认情况下）左上为主要的代码编写部分， 这部分代码会被储存在一个 .R 文">
+<meta name="description" content="双系统安装记录由于实在受不了我电脑上virtualbox过于羸弱的性能，我尝试在我的两台电脑上都安装了win&amp;ubuntu双系统。不得不说安装流程比我想象中的简单太多，安装后两个系统也都非常流畅。不过中间还是踩了不少坑，也重装了几次系统，现将过程记录如下，以飨后人。  本文以在一台已安装windows11的电脑上安装ubuntu 24.04 LTS为例  前期准备 下载ubuntu的iso">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Runthrough Note 1">
-<meta property="og:url" content="https://stellarlane.github.io/2024/03/22/'R'unthrough%20N1/index.html">
+<meta property="og:title" content="双系统安装记录">
+<meta property="og:url" content="https://stellarlane.github.io/2024/05/21/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="‘R’unthrough N1因为是速通，所以会写得比较简短和跳跃速通参考书为PKU李东风教授《R语言教程》, 非常感谢李东风教授的整理 使用R语言进行编程首先是要在电脑上下载R语言， 建议下载后添加到环境变量里R语言自带有IDE， 但Rstudio（或者vsc）是更好的替代品以Rstudio为例， 其界面分为4个部分， （默认情况下）左上为主要的代码编写部分， 这部分代码会被储存在一个 .R 文">
+<meta property="og:description" content="双系统安装记录由于实在受不了我电脑上virtualbox过于羸弱的性能，我尝试在我的两台电脑上都安装了win&amp;ubuntu双系统。不得不说安装流程比我想象中的简单太多，安装后两个系统也都非常流畅。不过中间还是踩了不少坑，也重装了几次系统，现将过程记录如下，以飨后人。  本文以在一台已安装windows11的电脑上安装ubuntu 24.04 LTS为例  前期准备 下载ubuntu的iso">
 <meta property="og:locale">
-<meta property="article:published_time" content="2024-03-22T04:01:00.000Z">
-<meta property="article:modified_time" content="2024-03-22T04:01:00.000Z">
+<meta property="article:published_time" content="2024-05-20T17:38:02.276Z">
+<meta property="article:modified_time" content="2024-05-29T18:29:33.390Z">
 <meta property="article:author" content="StellarLane">
-<meta property="article:tag" content="R">
-<meta property="article:tag" content="Data Science">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
-    <meta name="keywords" content="data science">
 
-
-<title >Runthrough Note 1</title>
+<title >双系统安装记录</title>
 
 <!-- Favicon -->
 
@@ -67,7 +64,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"stellarlane.github.io","author":"StellarLane","root":"/","typed_text":["Let it go as if you wander"],"theme_version":"2.1.15","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"https://em-content.zobj.net/source/skype/289/shooting-star_1f320.png","icon16":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","icon32":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","appleTouchIcon":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"https://em-content.zobj.net/source/google/387/pleading-face_1f97a.png","showText":"StellarLane's Blog","hideText":"喜欢您来，喜欢您再来>_<"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":""},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-22 12:01:00"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-05-30 02:29:33"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.15" id="trm-switch-style">
@@ -161,15 +158,15 @@
             </li>
             
             <li class="menu-item-has-children ">
-                <a  href="/links/" target="">
-                    友链
+                <a  href="/tags/" target="">
+                    标签
                 </a>
                 
             </li>
             
             <li class="menu-item-has-children ">
-                <a  href="/tags/" target="">
-                    标签
+                <a  href="/links/" target="">
+                    友链
                 </a>
                 
             </li>
@@ -213,7 +210,7 @@
     <div class="trm-banner">
     
     <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://ooo.0x0.ooo/2024/02/26/OyAN0B.png">
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://ooo.0x0.ooo/2024/05/30/OJRCqG.png">
     <!-- banner cover end -->
     
 
@@ -232,7 +229,7 @@
                             Thanks for reading!
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            Runthrough Note 1
+                            双系统安装记录
                         </h1>
 
                         
@@ -361,13 +358,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            03/22
+            05/21
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            12:01
+            01:38
         </div>
     </div>
     <div class="col-sm-4">
@@ -379,36 +376,35 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="‘R’unthrough-N1"><a href="#‘R’unthrough-N1" class="headerlink" title="‘R’unthrough N1"></a>‘R’unthrough N1</h1><p>因为是速通，所以会写得比较简短和跳跃<br>速通参考书为PKU李东风教授《R语言教程》, 非常感谢李东风教授的整理</p>
-<h2 id="使用R语言进行编程"><a href="#使用R语言进行编程" class="headerlink" title="使用R语言进行编程"></a>使用R语言进行编程</h2><p>首先是要在电脑上下载R语言， 建议下载后添加到环境变量里<br>R语言自带有IDE， 但Rstudio（或者vsc）是更好的替代品<br>以Rstudio为例， 其界面分为4个部分， （默认情况下）左上为主要的代码编写部分， 这部分代码会被储存在一个 .R 文件中, 左下为命令行, 和py和bash类似, 命令行也可用写部分代码或者命令, 但由于其不会被保存, 所以一般还是建议写在 .R 文件里, 对于 .R 文件中的代码, 通常是逐行运行, 按crtl+enter即可运行当前行的代码, 当前行代码的效果, 如生成的变量等, 会被记录在环境中, 可在右上角的环境窗口来监视环境中所有的变量, 可以手动清除当前环境中存在的所有变量, 右下角区域则为文件导航<br>R语言有丰富的拓展包, 下载这些拓展包最常用的方式则是 <code>install.packages(&quot;你想要下载的包&quot;)</code> , 随后需要再次使用 <code>library(你要启用的包)</code> 来启用, 注意library这里不用引号</p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>R语言的基础变量包括数值, 字符串（没有单个字符）, 布尔值, 缺失值<br>数值的类型一般会自动决定, 不用显式说明, 且支持用科学计数法表示和表示虚数;<br>R中没有字符一说, 都是字符串, 可用””也可用’’, 支持中文, 但注意编码<br>R中还有缺失值一说, 一般记为NA, 数值型, 字符型, 布尔型都可以有缺失值, 不过字符型的缺失值需要手动规定</p>
-<p>以上述这些基础变量作为向量的元素, R语言的数据可以以向量,矩阵等形式存储, 单个数值也可以理解为标量; R语言是动态类型的 变量类型不需要事先声明, 在R语言中通过 <code>&lt;-</code> 进行赋值操作, 可用 <code>c()</code> 创建新向量,如:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line">a</span><br><span class="line"><span class="comment"># [1] 1 2</span></span><br></pre></td></tr></table></figure>
-<p>除此之外R也支持对象</p>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数同样的常规调用方法与其他语言大同小异, 除此之外也可以使用”pipe” <code>|&gt;</code> 调用, 除了多了个&gt;以外和bash中的pipe运算符差不多;</p>
-<p>R自带了大量的内置函数:<br><code>%/%</code> 表示整除, <code>%%</code> 表示取余;<br><code>^</code> 表示乘方运算;<br><code>round(a,b)</code> 对a向下取整至小数点后b位, (b可不写默认为0), <code>round(a,b)</code> <code>ceiling(a,b)</code> 分别为四舍五入,向上取整;<br>内置 <code>sin(x)</code> <code>cos(x)</code> <code>tan(x)</code> , 单位为弧度制, 也可使用反三角函数,加a即可, 如 <code>asin(x)</code> 即表示反正弦,;<br>除此之外还包括大量分布函数, 如 <code>dnorm(x)</code> 表示标准正态分布密度 $ \phi(x)&#x3D;\frac{1}{\sqrt(2\pi)}e^{-\frac{1}{2}x^2} $ , <code>pnorm(x)</code> 表示标准正态分布函数 $ \Phi&#x3D;\int_{-\infin}^{x} \phi(x)dt $ <code>qnorm(y)</code> 表示标准正态分布位函数, 即 $ \Phi^{-1}(x) $ 等;</p>
-<p>除此之外R也支持函数自定义, 格式如下:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functionname <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>x1<span class="punctuation">,</span> x2<span class="punctuation">,</span> y1<span class="punctuation">,</span> y2<span class="punctuation">)</span><span class="punctuation">&#123;</span> <span class="comment">#用=替代&lt;-其实也可以</span></span><br><span class="line">    <span class="built_in">sqrt</span><span class="punctuation">(</span><span class="punctuation">(</span>x1<span class="operator">-</span>x2<span class="punctuation">)</span><span class="operator">^</span><span class="number">2</span><span class="operator">+</span><span class="punctuation">(</span>y1<span class="operator">-</span>y2<span class="punctuation">)</span><span class="operator">^</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>在R中函数有返回值, 当没有明确指出时默认将最后一个语句的结果返回, 或者直接使用return来返回需要的值</p>
-<p>输出可使用print或者cat(), cat()可用于多项内容和文本, 且可以使用”\n”进行换行操作, 在这两种常规的输出之外, 还有一种 <code>sink()</code> 常用于调试阶段, 其可以在程序执行时将数据写入到文档或其他媒介中, 使用 <code>sink()</code> 可暂停这批写入操作 </p>
-<h3 id="画图初步"><a href="#画图初步" class="headerlink" title="画图初步"></a>画图初步</h3><ul>
-<li><p>curve<br>  curve(f,a,b) 可用于绘制[a,b]区间上的f(x)函数图像,如</p>
-  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curve<span class="punctuation">(</span><span class="built_in">sin</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">,</span><span class="number">0</span><span class="punctuation">,</span><span class="number">2</span><span class="operator">*</span><span class="built_in">pi</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>  即绘制了[0,2$\pi$]段的$f(x)&#x3D;sinx$的图像<br>  更多可选参数<br>  <code>n</code> : 可选参数，指定在给定范围取的点数，默认为100。<br>  <code>type</code> : 可选参数，指定曲线的类型，可以是 “l”（线段），”s”（阶梯），”b”（点线），或者 “c”（平滑曲线）。<br>  <code>col</code> : 可选参数，指定曲线的颜色。<br>  <code>lwd</code> : 可选参数，指定曲线线的宽度。</p>
-</li>
-<li><p>barplot<br>  barplot可用于绘制直方图, 其主要参数为一个向量, 反映每个条形的高度, 这个向量可以是一个纯数向量, 其元素也可以是 “组名”&#x3D;数值 的形式, 如:</p>
-  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">barplot<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;睡眠充足&quot;</span><span class="operator">=</span><span class="number">20</span><span class="punctuation">,</span><span class="string">&quot;睡眠不足&quot;</span><span class="operator">=</span><span class="number">70</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>  更多可选参数<br>  <code>height</code> : 一个数值向量，表示条形的高度。通常，这是你想要在条形图中展示的数据。<br>  <code>width</code> : 一个数值向量，表示条形的宽度。如果只有一个数值，所有的条形将使用相同的宽度。<br>  <code>space</code> : 一个数值，表示条形之间的间隔大小。<br>  <code>col</code> : 一个颜色向量，用于指定每个条形的颜色。如果没有提供，条形将使用默认的颜色。<br>  <code>horiz</code> : 一个逻辑值，如果设置为 TRUE，将创建水平条形图；如果为 FALSE（默认值），则创建垂直条形图。<br>  <code>main</code> : 将创建表格标题</p>
-</li>
-<li><p>plot<br>  plot可用来绘制一般散点图, 最简单的散点图需要两个向量作为参数, 一个是横坐标值, 另一个是纵坐标值</p>
-  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot<span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">10</span><span class="punctuation">,</span><span class="built_in">sqrt</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">10</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>  事实上plot能画大部分图像包括curve和plot所画的, 可通过参数 <code>type</code> 自行选择</p>
-</li>
-<li><p>abline<br>  除了自身生成的图像外, 可使用abline手动添加点和直线等, 最简单的例如</p>
-  <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abline<span class="punctuation">(</span>h<span class="operator">=</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line">abline<span class="punctuation">(</span>v<span class="operator">=</span><span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>  第一行添加了位于y&#x3D;2的一条水平线, 第二行添加了一条位于x&#x3D;2的竖直线</p>
-</li>
-</ul>
+    <h1 id="双系统安装记录"><a href="#双系统安装记录" class="headerlink" title="双系统安装记录"></a>双系统安装记录</h1><p>由于实在受不了我电脑上virtualbox过于羸弱的性能，我尝试在我的两台电脑上都安装了win&amp;ubuntu双系统。不得不说安装流程比我想象中的简单太多，安装后两个系统也都非常流畅。不过中间还是踩了不少坑，也重装了几次系统，现将过程记录如下，以飨后人。</p>
+<blockquote>
+<p>本文以在一台已安装windows11的电脑上安装ubuntu 24.04 LTS为例</p>
+</blockquote>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
+<li>下载ubuntu的iso文件，使用rufus工具制作系统盘，将rufus设置中分区类型设为GPT，文件系统设置为NTFS</li>
+<li>系统信息上查看BIOS模式是否为UEFI</li>
+<li>设置中搜索并关闭bitlocker（家庭版没有bitlocker可忽略此步骤）</li>
+<li>控制面板-硬件与声音-电源选项-系统设置-电源按钮功能-关闭“启用快速启动”</li>
+<li>计算机管理-磁盘管理中清理出一个未分配的空间(具体多少可看个人需求)</li>
+<li>插入制作好的系统盘</li>
+<li>进入BIOS模式-安全模式-关闭安全启动</li>
+<li>进入BIOS模式-启动设置中UEFI启动顺序为USB闪存驱动器&#x2F;硬盘</li>
+<li>保存并退出</li>
+</ol>
+<h2 id="安装中"><a href="#安装中" class="headerlink" title="安装中"></a>安装中</h2><p>此时再重启就会进入grub菜单，grub是一个启动加载程序，可以管理多个操作系统的启动，如果已做好安装ubuntu的相关准备即可选择grub菜单中的“try or install ubuntu”项<br>时至24.04,安装大部分是图形化界面，大部分都可以保持默认或者根据提示确定自己的需求，非常轻松愉快。稍微需要注意的是安装类型：需选择“其他选项”，之前清理出的未分配空间会显示为空闲，选择创建大小为16GB的分区，类型为交换空间（似乎在更老版本的ubuntu中可以选择分区的类型（主&#x2F;逻辑分区）和分区位置（空间起始&#x2F;结束），似乎24.04没有这里两个设置选项），划分50gb，用于ext4日志文件系统，挂载点为&#x2F;，剩余空间同样设置为ext4日志文件系统，挂载点改为&#x2F;home<br>然后就继续正常安装流程，安装成功重启之后拔出u盘，安装过程就基本结束了～</p>
+<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><h3 id="grub美化"><a href="#grub美化" class="headerlink" title="grub美化"></a>grub美化</h3><p>您应该也注意到了默认的grub是比较有一种复古的美的，如果您希望您的开屏页能更现代&#x2F;花里胡哨的话，也可以修改grub的样式，最简单的就是更改grub主题。您可以在<a target="_blank" rel="noopener" href="https://github.com/jacksaur/Gorgeous-GRUB">Gorgeous-GRUB</a>等网站上找到诸多精美的Grub主题，在Linux系统上下载并解压之后，运行其自带的install脚本即可安装</p>
+<h3 id="安装时的bug"><a href="#安装时的bug" class="headerlink" title="安装时的bug"></a>安装时的bug</h3><p>在安装时有个界面是让你输入用户名和密码等，同时系统会根据你所输入的用户名和电脑本身自动生成设备名，<strong>不要修改其自动生成的设备名</strong>，可能会导致安装流程直接卡死，需要重新开始安装流程等问题</p>
+<h3 id="文件系统的陷阱"><a href="#文件系统的陷阱" class="headerlink" title="文件系统的陷阱"></a>文件系统的陷阱</h3><p><strong>5.29 update:今天笔者遇见了和这次一样的问题，后文记载了这次遇到时笔者如何不重装系统解决此问题</strong><br>作为一个电脑小白，我对操作系统的文件管理原理是一无所知的。在我当时用virtualbox的时候就因为不能在win和虚拟机间方便地互传文件而相当苦恼，而在这次安装了ubuntu之后，我惊喜的发现可以在ubuntu中访问本来没有划入ubuntu分区部分空间。于是我十分开心的从其中找到了几张图片设为壁纸。<br>然后就开不了机了，报错信息为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fsckd-cancel-msg： Ctrl+C ...</span><br></pre></td></tr></table></figure>
+<p>我查了一下网上这个报错是由检验系统文件完整性的工具发出，大多是因为根目录空间占满了而触发，但照理说我刚下在应该不会出现这样的问题，后来我回想感觉应该就是因为我设置的壁纸本身的空间不在ubuntu系统内，导致了文件检验没有通过。后续我发现将其他分区的文件复制到系统内是没问题的，但不能直接去随意使用系统外分区存储的文件。（不确定这个解释是否正确）<br>这个问题理论上应该可以通过进入recovery模式解决，当然对我这种啥都不懂的还是直接重装吧。</p>
+<h3 id="远离自带的App商店！"><a href="#远离自带的App商店！" class="headerlink" title="远离自带的App商店！"></a>远离自带的App商店！</h3><p>在自带商店下载vscode后，我发现我不能在其中输入中文，原因就是商店中下载的snap版本vscode是不完整的，到vscode官网上自行下载deb包即可。</p>
+<h3 id="桌面环境崩溃，以及解决方案"><a href="#桌面环境崩溃，以及解决方案" class="headerlink" title="桌面环境崩溃，以及解决方案"></a>桌面环境崩溃，以及解决方案</h3><p>在5.29下午一次寻常的自动熄屏之后，我试图重新打开，然后在解锁界面，我输入了正确的密码之后密码框提示’authentication error’然后就卡死了，当时我就吓晕了，因为这集我见过，果然卡死之后我尝试重启，遇见了之前一样的情况，提示gnome崩溃，无法进入图形界面。<br>由于已经用了一段时间，这时若直接重装系统来解决问题的话，数据丢失的成本难免有些大。而且我记得我已经有很久没有开过windows系统了，应该没有什么问题。在进入recovery模式后，我注意到仍然没有网络上其他此类状况触发时的磁盘空间占满的情况，此时我注意到有帖子称这可能只是单纯的gnome桌面环境崩溃，于是尝试了在rec下重装桌面环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt remove gdm3</span><br><span class="line">apt install gdm3</span><br></pre></td></tr></table></figure>
+<p>重启之后就可以正常进入了，不过这个安装的桌面环境和原版还是略有不同(我的在安装后找不到文件管理器)，可能是因为安装的gnome和原版不太一样，若想还原之前的体验可继续下在ubuntu的定制版gnome</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ubuntu-desktop gnome-shell-extension-ubuntu-dock</span><br></pre></td></tr></table></figure>
+<h3 id="关闭wayland协议"><a href="#关闭wayland协议" class="headerlink" title="关闭wayland协议"></a>关闭wayland协议</h3><p>wayland协议是一种用来构建用户界面的协议，以替代传统的协议，达到更高效，更美观，更安全的目的，但架不住某些一如既往地不爱遵守规则的软件厂商不用此协议，比如在安装腾讯会议后，我试图打开，其就会显示不兼容wayland协议，程序即将退出。关闭wayland的解决方案如下（好像也可以不关闭，在腾讯会议中绕过，但这样好像会导致一些bug我就没用）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm3/custom.conf</span><br><span class="line"><span class="comment">#WaylandEnable=False  本行默认为注释状态，取消注释</span></span><br><span class="line">sudo service gdm3 restart</span><br></pre></td></tr></table></figure>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>希望上述内容能帮到您，祝您安装顺利，使用愉快😚</p>
 
 </article>
     
@@ -424,9 +420,10 @@
         </h5>
     </div>
     
+    
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/03/22/'R'unthrough%20N2/" class="trm-cover-frame trm-anima-link">
+        <a href="/2024/04/11/Data100N2/" class="trm-cover-frame trm-anima-link">
             
             
                 <img alt="cover" class="no-fancybox" src="/img/block.jpg">
@@ -440,46 +437,14 @@
                 </a>
             </div>
             <h5>
-                <a href="/2024/03/22/'R'unthrough%20N2/" class="trm-anima-link">
-                    Runthrough Note 2
+                <a href="/2024/04/11/Data100N2/" class="trm-anima-link">
+                    Data100 Note 2
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>24/03/22</li>
-                <li>12:01</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2024/03/22/Data100N0/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/CSDIY/">
-                    CSDIY
-                </a>
-            </div>
-            <h5>
-                <a href="/2024/03/22/Data100N0/" class="trm-anima-link">
-                    Data100 Note 0： 开荒
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>24/03/22</li>
-                <li>12:01</li>
+                <li>24/04/11</li>
+                <li>02:38</li>
                 
                 
             </ul>
@@ -539,7 +504,7 @@
 				</span>
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="‘R’unthrough N1"><a rel="nofollow" class="trm-toc-link" href="#‘R’unthrough-N1"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">‘R’unthrough N1</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="使用R语言进行编程"><a rel="nofollow" class="trm-toc-link" href="#使用R语言进行编程"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">使用R语言进行编程</span></a></li><li class="trm-toc-item trm-toc-level-2" title="基础"><a rel="nofollow" class="trm-toc-link" href="#基础"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">基础</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="变量"><a rel="nofollow" class="trm-toc-link" href="#变量"><span class="trm-toc-number">1.2.1.</span> <span class="trm-toc-text">变量</span></a></li><li class="trm-toc-item trm-toc-level-3" title="函数"><a rel="nofollow" class="trm-toc-link" href="#函数"><span class="trm-toc-number">1.2.2.</span> <span class="trm-toc-text">函数</span></a></li><li class="trm-toc-item trm-toc-level-3" title="画图初步"><a rel="nofollow" class="trm-toc-link" href="#画图初步"><span class="trm-toc-number">1.2.3.</span> <span class="trm-toc-text">画图初步</span></a></li></ol></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-1" title="双系统安装记录"><a rel="nofollow" class="trm-toc-link" href="#双系统安装记录"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">双系统安装记录</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-2" title="前期准备"><a rel="nofollow" class="trm-toc-link" href="#前期准备"><span class="trm-toc-number">1.1.</span> <span class="trm-toc-text">前期准备</span></a></li><li class="trm-toc-item trm-toc-level-2" title="安装中"><a rel="nofollow" class="trm-toc-link" href="#安装中"><span class="trm-toc-number">1.2.</span> <span class="trm-toc-text">安装中</span></a></li><li class="trm-toc-item trm-toc-level-2" title="后话"><a rel="nofollow" class="trm-toc-link" href="#后话"><span class="trm-toc-number">1.3.</span> <span class="trm-toc-text">后话</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3" title="grub美化"><a rel="nofollow" class="trm-toc-link" href="#grub美化"><span class="trm-toc-number">1.3.1.</span> <span class="trm-toc-text">grub美化</span></a></li><li class="trm-toc-item trm-toc-level-3" title="安装时的bug"><a rel="nofollow" class="trm-toc-link" href="#安装时的bug"><span class="trm-toc-number">1.3.2.</span> <span class="trm-toc-text">安装时的bug</span></a></li><li class="trm-toc-item trm-toc-level-3" title="文件系统的陷阱"><a rel="nofollow" class="trm-toc-link" href="#文件系统的陷阱"><span class="trm-toc-number">1.3.3.</span> <span class="trm-toc-text">文件系统的陷阱</span></a></li><li class="trm-toc-item trm-toc-level-3" title="远离自带的App商店！"><a rel="nofollow" class="trm-toc-link" href="#远离自带的App商店！"><span class="trm-toc-number">1.3.4.</span> <span class="trm-toc-text">远离自带的App商店！</span></a></li><li class="trm-toc-item trm-toc-level-3" title="桌面环境崩溃，以及解决方案"><a rel="nofollow" class="trm-toc-link" href="#桌面环境崩溃，以及解决方案"><span class="trm-toc-number">1.3.5.</span> <span class="trm-toc-text">桌面环境崩溃，以及解决方案</span></a></li><li class="trm-toc-item trm-toc-level-3" title="关闭wayland协议"><a rel="nofollow" class="trm-toc-link" href="#关闭wayland协议"><span class="trm-toc-number">1.3.6.</span> <span class="trm-toc-text">关闭wayland协议</span></a></li></ol></li><li class="trm-toc-item trm-toc-level-2" title="结语"><a rel="nofollow" class="trm-toc-link" href="#结语"><span class="trm-toc-number">1.4.</span> <span class="trm-toc-text">结语</span></a></li></ol></li></ol>
       </div>
     </div>
 
