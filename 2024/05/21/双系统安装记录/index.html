@@ -15,7 +15,7 @@
 <meta property="og:description" content="双系统安装记录由于实在受不了我电脑上virtualbox过于羸弱的性能，我尝试在我的两台电脑上都安装了win&amp;ubuntu双系统。不得不说安装流程比我想象中的简单太多，安装后两个系统也都非常流畅。不过中间还是踩了不少坑，也重装了几次系统，现将过程记录如下，以飨后人。  本文以在一台已安装windows11的电脑上安装ubuntu 24.04 LTS为例  前期准备 下载ubuntu的iso">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-05-20T17:38:02.276Z">
-<meta property="article:modified_time" content="2024-05-29T18:29:33.390Z">
+<meta property="article:modified_time" content="2024-05-29T19:14:15.000Z">
 <meta property="article:author" content="StellarLane">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -64,7 +64,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"stellarlane.github.io","author":"StellarLane","root":"/","typed_text":["Let it go as if you wander"],"theme_version":"2.1.15","theme":{"switch":true,"default":"style-dark"},"favicon":{"logo":"https://em-content.zobj.net/source/skype/289/shooting-star_1f320.png","icon16":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","icon32":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","appleTouchIcon":"https://em-content.zobj.net/source/google/387/winking-face_1f609.png","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"https://em-content.zobj.net/source/google/387/pleading-face_1f97a.png","showText":"StellarLane's Blog","hideText":"喜欢您来，喜欢您再来>_<"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false},"live_time":{"start_time":"","prefix":""},"danmu":{"enable":false,"el":".trm-banner"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-05-30 02:29:33"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-05-30 03:14:15"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.15" id="trm-switch-style">
@@ -210,7 +210,7 @@
     <div class="trm-banner">
     
     <!-- banner cover -->
-    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://ooo.0x0.ooo/2024/05/30/OJRCqG.png">
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="https://ooo.0x0.ooo/2024/02/26/OyAN0B.png">
     <!-- banner cover end -->
     
 
@@ -402,6 +402,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt remove gdm3</span><br><span class="line">apt install gdm3</span><br></pre></td></tr></table></figure>
 <p>重启之后就可以正常进入了，不过这个安装的桌面环境和原版还是略有不同(我的在安装后找不到文件管理器)，可能是因为安装的gnome和原版不太一样，若想还原之前的体验可继续下在ubuntu的定制版gnome</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ubuntu-desktop gnome-shell-extension-ubuntu-dock</span><br></pre></td></tr></table></figure>
+<p>经查证，此事件大概率是因为在我当时为了打开AppImage安装了老版fuse，安装老版fuse时破坏了桌面环境。</p>
 <h3 id="关闭wayland协议"><a href="#关闭wayland协议" class="headerlink" title="关闭wayland协议"></a>关闭wayland协议</h3><p>wayland协议是一种用来构建用户界面的协议，以替代传统的协议，达到更高效，更美观，更安全的目的，但架不住某些一如既往地不爱遵守规则的软件厂商不用此协议，比如在安装腾讯会议后，我试图打开，其就会显示不兼容wayland协议，程序即将退出。关闭wayland的解决方案如下（好像也可以不关闭，在腾讯会议中绕过，但这样好像会导致一些bug我就没用）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm3/custom.conf</span><br><span class="line"><span class="comment">#WaylandEnable=False  本行默认为注释状态，取消注释</span></span><br><span class="line">sudo service gdm3 restart</span><br></pre></td></tr></table></figure>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>希望上述内容能帮到您，祝您安装顺利，使用愉快😚</p>
@@ -420,13 +421,44 @@
         </h5>
     </div>
     
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/05/30/page/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/05/30/page/" class="trm-anima-link">
+                    page
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/05/30</li>
+                <li>03:43</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
         <a href="/2024/04/11/Data100N2/" class="trm-cover-frame trm-anima-link">
             
             
-                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                <img alt="cover" class="no-fancybox" src="https://ooo.0x0.ooo/2024/05/30/OJtMQI.png">
             
         </a>
         
